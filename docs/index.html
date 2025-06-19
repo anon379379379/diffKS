@@ -76,7 +76,7 @@
 
     <img src="images/diffKS_diagram.svg" alt="DiffKS diagram" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)">
     <p style="text-align:center;font-size:0.9rem;margin-top:0.4rem"><strong>Figure 1: Diagram of our proposed DiffKS architecture.</strong></p>
-    <p style="text-align:center;font-size:0.9rem">The learnable parameters are shown in a pink → egg-white gradient. On the right, a forward custom Extended Karplus-Strong (EKS) generates the resonant output; on the left, its inversion extracts the pluck excitation. Note that the learnable parameters are tied between both branches; i.e. The trainable vector θ is used once for the forward EKS and again for the inversed EKS. For clarity, inversion collapses excitation filter coefficients <code>a<sub>3</sub></code>, <code>a<sub>2</sub></code>, and <code>a<sub>1</sub></code>, while forward mode collapses <code>a<sub>2</sub></code>, <code>a<sub>3</sub></code>, and <code>a<sub>4</sub></code>. Blocks with points joint by dashed-lines and a tuning-fork icon denote linear interpolation and tuning operations.</p>
+    <p style="text-align:center;font-size:0.9rem">The learnable parameters are shown in a pink → egg-white gradient. On the right, a forward custom Extended Karplus-Strong (EKS) generates the resonant output; on the left, its inversion extracts the pluck excitation. Note that the learnable parameters are tied between both branches; i.e. The trainable vector θ is used once for the forward EKS and again for the inversed EKS. For clarity, inversion collapses excitation filter coefficients <code>a<sub>3</sub></code>, <code>a<sub>2</sub></code>, and <code>a<sub>1</sub></code>, while forward mode collapses <code>a<sub>2</sub></code>, <code>a<sub>3</sub></code>, and <code>a<sub>4</sub></code>. Blocks with points joint by dashed-lines and a tuning-fork icon denote linear interpolation and tuning operations. *Since our proposed EKS and inversed EKS are exact mirroring operations, we zero the recovered excitation data outside of a 25ms window. Not doing this would result in a no-op.</p>
   </div></section>
 
   <!-- ===== AUDIO TABLE CONTAINERS ===== -->
@@ -109,7 +109,7 @@
   title : 'DiffKS Path Flow',
   path  : 'flow',
   models: ['truth','inv','pred'],
-  labels: { truth:'Ground Truth', inv:'Inverse', pred:'Predicted' }
+  labels: { truth:'Ground Truth', inv:'Excitation', pred:'Predicted' }
 },
     {
     title:'DiffKS (Gradient Descent) vs Genetic Algorithm (GA)',
